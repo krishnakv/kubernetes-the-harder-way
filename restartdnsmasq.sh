@@ -20,11 +20,11 @@ case $(uname -s) in
   Darwin)
     brew services restart dnsmasq
 
-    if ! lsof -ni4TCP:53 | grep -q '192\.168\.1\.1'; then
+    if ! lsof -ni4TCP:53 | grep -q '192\.168\.2\.1'; then
       qemu-system-aarch64 \
           -nographic \
           -machine virt \
-          -nic vmnet-shared,start-address=192.168.1.1,end-address=192.168.1.20,subnet-mask=255.255.255.0 \
+          -nic vmnet-shared,start-address=192.168.2.1,end-address=192.168.2.20,subnet-mask=255.255.255.0 \
           </dev/null >/dev/null 2>&1 &
       qemu_pid=$!
 

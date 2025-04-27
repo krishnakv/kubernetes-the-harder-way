@@ -20,11 +20,11 @@ checkinterval=1
 autoreload=yes
 quiescent=yes
 
-virtual=192.168.1.21:6443
+virtual=192.168.2.21:6443
     servicename=kubernetes
-    real=192.168.1.11:6443 gate
-    real=192.168.1.12:6443 gate
-    real=192.168.1.13:6443 gate
+    real=192.168.2.11:6443 gate
+    real=192.168.2.12:6443 gate
+    real=192.168.2.13:6443 gate
     scheduler=wrr
     checktype=negotiate
     service=https
